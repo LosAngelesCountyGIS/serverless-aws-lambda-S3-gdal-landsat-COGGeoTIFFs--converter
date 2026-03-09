@@ -137,6 +137,32 @@ After successfully completing this project and verifying the pipeline works, we 
 
 This ensures that even if there were any residual configurations or forgotten resources, no charges could possibly accrue. The project remains fully reproducible using the code in this repository and a new AWS Free Tier account.
 
+
+
+### USGS Data Download
+<img src="image/Landsat-1.png" width="700" alt="USGS Website">
+<p><em>Figure 1: USGS EarthExplorer website for Landsat data download</em></p>
+
+<img src="image/Landsat-3.png" width="700" alt="Download ZIP">
+<p><em>Figure 2: Downloading all Landsat files in a zipped folder</em></p>
+
+<img src="image/Landsat-4.png" width="700" alt="13 Files">
+<p><em>Figure 3: Extracted Landsat 9 files - 13 total including spectral bands and metadata</em></p>
+
+### AWS Configuration
+<img src="image/AWS-Lambda-funct... .png" width="800" alt="AWS Lambda Function">
+<p><em>Figure 4: AWS Lambda function configuration with Python 3.9 runtime</em></p>
+
+<img src="image/AWS-S3-triggered-Lambda.png" width="800" alt="S3 Trigger">
+<p><em>Figure 5: S3 bucket trigger configured for automatic Lambda invocation</em></p>
+
+<img src="image/Created-buckets.png" width="800" alt="S3 Buckets">
+<p><em>Figure 6: Created S3 buckets for input/output storage</em></p>
+
+### Final Result
+<img src="image/QGIS.png" width="900" alt="QGIS COG Loading">
+<p><em>Figure 7: Cloud Optimized GeoTIFF (884KB) loading instantly in QGIS in under 3 seconds</em></p>
+
 ---
 
 ## 🚀 **Quick Start**
@@ -175,27 +201,3 @@ aws s3 cp s3://your-bucket/output/americana_7000m_raw_cog.tif ./
 
 
 
-
-### Local Processing
-<img src="image/Landsat-1.png" width="700" alt="CRS Analysis">
-<p><em>Figure 1: USGS website</em></p>
-
-<img src="image/Landsat-3.png" width="700" alt="Band Merging">
-<p><em>Figure 2:Downloading all files in a zipped folder/em></p>
-
-<img src="image/Landsat-4.png" width="700" alt="Buffer and Clip">
-<p><em>Figure 3: 13 files</em></p>
-
-### AWS Configuration
-<img src="image/AWS-Lambda-funct... .png" width="800" alt="AWS Lambda Function">
-<p><em>Figure 4: AWS Lambda function configuration with Python 3.9 runtime</em></p>
-
-<img src="image/AWS-S3-triggered-Lambda.png" width="800" alt="S3 Trigger">
-<p><em>Figure 5: S3 bucket trigger configured for automatic Lambda invocation</em></p>
-
-<img src="image/Created-buckets.png" width="800" alt="S3 Buckets">
-<p><em>Figure 6: Created S3 buckets for input/output storage</em></p>
-
-### Final Result
-<img src="image/QGIS.png" width="900" alt="QGIS COG Loading">
-<p><em>Figure 7: Cloud Optimized GeoTIFF loading instantly in QGIS (884KB file, &lt;3 seconds)</em></p>
