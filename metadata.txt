@@ -1,0 +1,56 @@
+============================================================
+LANDSAT TO COG PIPELINE - COMPLETE DOCUMENTATION
+============================================================
+
+PROJECT OVERVIEW
+---------------
+This project processes Landsat 9 satellite imagery to create
+a Cloud Optimized GeoTIFF (COG) of the Americana at Brand area
+in Glendale, California.
+
+LOCATION DETAILS
+---------------
+Location: Americana at Brand, Glendale, CA
+Latitude: 34.144° North
+Longitude: 118.256° West
+Buffer Radius: 7,000 meters (7 kilometers / 4.35 miles)
+Area Covered: 154 square kilometers
+
+SOURCE DATA
+-----------
+Satellite: Landsat 9
+Acquisition Date: March 6, 2026
+Product: Level-2 Surface Reflectance
+Bands Used: SR_B2 (Blue), SR_B3 (Green), SR_B4 (Red)
+
+PROCESSING STEPS
+---------------
+1. CRS Verification: Checked all files have consistent projection
+2. Reprojection: Converted to California State Plane (EPSG:2229)
+3. Band Merging: Combined RGB bands into true-color image
+4. Buffer Creation: Created 7,000m radius around target point
+5. Clipping: Extracted area of interest
+
+OUTPUT FILE
+-----------
+Filename: americana_7000m_raw.tif
+File Size: 1.3M (1.24 MB)
+Format: GeoTIFF (ready for COG conversion)
+Bands: 3 (Red, Green, Blue)
+Projection: EPSG:2229 (California State Plane Zone 5)
+
+AWS FREE TIER STATUS
+-------------------
+✅ S3 Storage: 0% of 5GB free limit
+✅ Lambda Requests: Well under 1 million/month limit
+✅ Lambda Compute: Well under 400,000 GB-seconds/month
+
+CONCLUSION: This file is 100% SAFE for AWS Free Tier!
+
+NEXT STEPS
+----------
+1. Upload to S3: aws s3 cp /home/professor/Downloads/landsat_to_cog/processing_pipeline/05_final_output_7000m/americana_7000m_raw.tif s3://your-bucket/input/
+2. Lambda will auto-convert to COG
+3. Final COG will be in s3://your-bucket/output/
+
+============================================================
