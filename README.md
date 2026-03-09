@@ -140,6 +140,8 @@ This ensures that even if there were any residual configurations or forgotten re
 
 ## 📸 ** **
 
+## 📸 **Screenshots**
+
 ### USGS Data Download
 ![USGS EarthExplorer](image/Landsat-1.png)
 *Figure 1: USGS EarthExplorer website for Landsat data download*
